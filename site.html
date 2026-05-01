@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>My dolars</title>
+</head>
+<body>
+    <img src="my-dolar.gif">
+    <h1>My dolars</h1>
+
+    <!-- "caixa" para separar, organizar blocos de conteúdo e aplicar estilos específicos (layout, cores, bordas) -->
+    <div>
+
+        <!-- MOSTRA AS CAIXINHAS DE REAL E DOLAR -->
+        <input id="input-real" type="number" placeholder="Valor em Reais">
+        <input id="input-dolar" placeholder = "Valor do Dólar">
+
+        <p id="valor-final-dolar">$ 0</p>
+
+            <!-- TODA VEZ QUE USAR ESSE BOTAO "ONCLICK", ELE VAI EXECUTAR A FUNCTION -->
+        <button onclick="calcularDolar()">Converter</button>
+    </div>
+</body>
+
+<!-- PURO CSS. É O ESTILO DO SITE -->
+<style>
+    /* TEM QUE USAR O "body" AQUI DNV PARA INFORMAR QUE É TODO CORPO DO TEXTO  */
+    body{
+        /* COMANDO PARA ONDE QUER ALINHAR O TEXTO E AS IMAGENS */
+        text-align: center;
+        /* COMANDO PARA MUDAR A COR DO SITE (USOU ESSE CÓDIGO 323232 PQ ESSE É O NÚMERO DA COR HEXADECIAL) */
+        background-color: #323232;
+    }
+    img{
+        /* PORCENTAGEM DO TAMANHO DA IMAGEM NA TELA */
+        width: 70%;
+    }
+
+
+    /* USOU O "h1" DNV PARA INFORMAR QUE SÓ ESTÁ EDITANDO O TÍTULO */
+    h1{
+        
+        /* COR DO TÍTULO */
+        color: #cfff00;
+
+        /* AUMENTAR O TAMANHO DO TEXTO EM FORMATO DE PIXELS */
+        font-size: 50px;
+    }
+
+    /* USOU DNV PARA EDITAR AS CAIXINHAS DO VALOR EM REAIS E D0 DOLAR */
+    input{
+        /* AUMENTAR A LARGURA DAS CAIXINHAS */
+        width: 140px;
+        /* AUMENTAR ALTURA DAS CAIXINHAS */
+        height: 30px;
+
+    }
+
+    /* USA O # PARA INFORMAR QUE VAI USAR UM ID */
+    /* EDIÇAÕ PARA A CAIXINHA DO REAL */
+    #input-real{
+        /* (SOLID) PARA INFROMAR QUE É UMA BORDA CONTÍNUA */
+        border: 3px  solid #cfff00;
+    }
+    #input-dolar{
+        border: 3px solid red;
+    }
+
+    p{
+      /* ADICIONAR O NEGRITO NAS PALAVRAS */
+       font-weight: bold;
+       font-size: 25px;
+    }
+
+    button{
+       height: 40px;
+       width: 150px;
+       font-size: 20px;
+       /* APARECER A MAOZINHA QUANDO PASSA O MOUSE */
+       cursor: pointer;
+       border: 3px solid #cfff00;
+       /* PARA A BORDA FICAR ARREDONDADA */
+       border-radius: 10px;
+       /* COR DO FUNDO DO BOTAO */
+       background-color: #323232;
+       /* COR DO TEXTO QUE VAI DENTRO DO BOTAO */
+       color: white;
+    }
+
+    /* ESTILOS QUE VAO APARECER QUANDO O MOUSE ESTIVER EM CIMA DO BOTÃO */
+    button:hover{
+        color: #323232;
+        background-color: #cfff00;
+
+    }
+</style>
+
+<!-- JAVA SCRIPT -->
+<script>
+    
+    // FUNCTION É UM TRECHO DE CÓDIGO QUE SÓ VAI SER REALIZADO PELO COMPUTADOR QUANDO EU MANDAR PARA ELE
+ function calcularDolar(){
+
+    // LET É UMA VARIAVEL(GUARDAR OS DADOS), DOCUMENT.GET É USADO PARA PEGAR O ID DO SITE
+    // .VALUE É USADO PARA PEGAR SÓ O VALOR DO ELEMENTO QUE EU QUERO, E NAO DO SITE TODO
+    let real = document.getElementById("input-real").value
+    let dolar = document.getElementById("input-dolar").value
+
+    // LET RESULTADO É A VARIAVEL PARA ARMAZENAR O CALCULA DO REAL PRO DOLAR
+    let resultado = real / dolar
+
+    // ALERT É USADO PARA MOSTRAR O RESULTADO NA TELA
+    alert(resultado)
+ }
+
+
+</script>
+
+
+
+</html>
